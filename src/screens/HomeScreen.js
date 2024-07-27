@@ -21,6 +21,7 @@ const HomeScreen = () => {
   const [newsRemaining, setNewsRemaining] = useState([]);
   const [pinNews, setPinNews] = useState([])
   const timerRef = useRef(null);
+
   useEffect(() => {
     fetch(newsApiUrl)
       .then((resp) => resp.json())
@@ -40,6 +41,7 @@ const HomeScreen = () => {
     };
 
   }, [restart])
+
   const storeNewsData = async (data) => {
     try {
       await AsyncStorage.setItem('newsDataLocal', JSON.stringify(data))
@@ -48,6 +50,7 @@ const HomeScreen = () => {
       console.error(e)
     }
   }
+
   const getNewsData = async () => {
     try {
       const value = await AsyncStorage.getItem('newsDataLocal')
@@ -63,6 +66,7 @@ const HomeScreen = () => {
       console.error(e)
     }
   }
+
   const addRandomNews = () => {
     if (newsRemaining?.length === 0) {
       setUpdate(!update)
@@ -75,6 +79,7 @@ const HomeScreen = () => {
     setNewsToShow((prev) => [...randomNews, ...prev]);
     setNewsRemaining((prev) => prev.filter((headline) => !randomNews.includes(headline)));
   };
+  
   return (
     <View style={style.main}>
       <View style={style.header} >
