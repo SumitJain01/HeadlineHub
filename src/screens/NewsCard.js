@@ -13,7 +13,7 @@ import {
   View
 } from 'react-native';
 import Swipeable from 'react-native-swipeable';
-import { formatTimestamp } from '@src/consts';
+import { formatTimestamp } from '@src/constants';
 
 const NewsCard = ({ news, index, newsToShow, setNewsToShow, showPin, pinNews, setPinNews }) => {
   const rightButtons = [

@@ -1,6 +1,6 @@
 import Logo from '@src/assets/svgs/logo.svg';
 import Refresh from '@src/assets/svgs/refresh.svg';
-import { newsApiUrl } from '@src/consts';
+import { newsApiUrl } from '@src/constants';
 import NewsCard from '@src/screens/NewsCard';
 import React, { useEffect, useState, useRef } from 'react';
 import {
