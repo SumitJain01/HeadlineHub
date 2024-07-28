@@ -13,6 +13,7 @@ import {
   View
 } from 'react-native';
 import Swipeable from 'react-native-swipeable';
+import { formatTimestamp } from '@src/consts';
 
 const NewsCard = ({ news, index, newsToShow, setNewsToShow, showPin, pinNews, setPinNews }) => {
   const rightButtons = [
@@ -67,7 +68,7 @@ const NewsCard = ({ news, index, newsToShow, setNewsToShow, showPin, pinNews, se
             }
             <Text style={style.channel}>{news?.source?.name?.slice(0, 30)}</Text>
           </View>
-          <Text style={style.time}>7:33AM</Text>
+          <Text style={style.time}>{formatTimestamp(news?.publishedAt)}</Text>
         </View>
         <View style={style.desc} >
           <Text style={style.headline} numberOfLines={3}>{news?.title}</Text>
